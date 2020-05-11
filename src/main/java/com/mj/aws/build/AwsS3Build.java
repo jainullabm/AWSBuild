@@ -29,8 +29,9 @@ public class AwsS3Build {
 	
 	 
 	// s3client.putObject("www.checkmateinn.com","images/chatboticon.png",new File("C:\\Users\\moham\\Documents\\Innovation\\images\\chatboticon.png"));
-	 
+	 System.out.println("Started");
 	 TransferManager xfer_mgr = TransferManagerBuilder.standard().build();
+	 System.out.println("Building");
 	 try {
 		 final long startTime = System.nanoTime();
 		
