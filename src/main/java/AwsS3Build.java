@@ -21,8 +21,7 @@ import com.amazonaws.services.s3.transfer.Upload;
 public class AwsS3Build {
  public static void main(String args[]) {
 	 AWSCredentials credentials = new BasicAWSCredentials(
-			  "AKIA3YEWP2HAEQ3SMRX4", 
-			  "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA"
+			  args[0],args[1]
 			);
 	 
 	 AmazonS3 s3client = AmazonS3ClientBuilder
