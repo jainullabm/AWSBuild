@@ -1,3 +1,4 @@
+package com.mj.aws.build;
 
 import com.amazonaws.AmazonClientException;
 import com.amazonaws.AmazonServiceException;

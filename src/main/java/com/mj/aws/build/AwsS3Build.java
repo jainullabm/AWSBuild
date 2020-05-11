@@ -1,3 +1,4 @@
+package com.mj.aws.build;
 import java.io.File;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
