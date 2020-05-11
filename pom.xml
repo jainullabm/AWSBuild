@@ -54,20 +54,32 @@
     <version>0.7.3</version>
 </dependency>
   </dependencies>
-   <build>
-   <plugins>
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-jar-plugin</artifactId>        
-      <configuration>
-        <archive>
-          <manifest>
-            <addClasspath>true</addClasspath>
-            <mainClass>com.mj.aws.build.AwsS3Build</mainClass>
-          </manifest>
-        </archive>
-      </configuration>
-    </plugin>
-  </plugins>
- </build>
+  <build>
+        <sourceDirectory>src</sourceDirectory>
+        <plugins>
+            <plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.3</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2.1</version>
+                <configuration>
+                    <mainClass>com.mj.aws.build.AwsS3Build</mainClass>
+    <arguments>
+      <argument>AKIA3YEWP2HAEQ3SMRX4</argument>
+      <argument>rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA</argument>
+    </arguments>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+
+    </build>
+   
 </project>
