@@ -27,18 +27,25 @@ public class AwsS3Build {
 		 * 
 		 * System.out.println(args[0]); System.out.println(args[1]);
 		 */
-	 BasicAWSCredentials creds = new BasicAWSCredentials("AKIA3YEWP2HAEQ3SMRX4", "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA");
-	    AmazonS3 s3Client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(creds)).build();
-
-	     
 	 
+	 
+	 System.out.println("Uploading started");
+	 BasicAWSCredentials creds = new BasicAWSCredentials("AKIA3YEWP2HAEQ3SMRX4", "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA");
+	 AmazonS3 s3client = AmazonS3ClientBuilder.standard()
+		        .withCredentials(new AWSStaticCredentialsProvider(creds))
+		        .withRegion(Regions.US_EAST_2)
+		        .build();
+
 	// s3client.putObject("www.checkmateinn.com","images/chatboticon.png",new File("C:\\Users\\moham\\Documents\\Innovation\\images\\chatboticon.png"));
-	 System.out.println("Started");
-	 TransferManagerBuilder.standard().setS3Client(s3Client);
-	 TransferManager xfer_mgr = TransferManagerBuilder.standard().build();
-	 System.out.println(xfer_mgr.getAmazonS3Client().getRegion());
-	 xfer_mgr.getAmazonS3Client().getRegion();
-	 System.out.println("Building");
+	
+
+	
+	// TransferManager xfer_mgr = TransferManagerBuilder.defaultTransferManager();
+	 TransferManager xfer_mgr = TransferManagerBuilder.standard()
+             .withS3Client(s3client)
+             .build();
+	
+
 	 try {
 		 final long startTime = System.nanoTime();
 		
