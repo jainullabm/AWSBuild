@@ -109,11 +109,7 @@ public class AwsS3Build {
      printProgressBar(0.0);
      // update the progress bar while the xfer is ongoing.
      do {
-         try {
-             Thread.sleep(10000);
-         } catch (InterruptedException e) {
-             return;
-         }
+         
          // Note: so_far and total aren't used, they're just for
          // documentation purposes.
          TransferProgress progress = xfer.getProgress();
@@ -154,11 +150,7 @@ public class AwsS3Build {
          }
 
          // wait a bit before the next update.
-         try {
-             Thread.sleep(10000);
-         } catch (InterruptedException e) {
-             return;
-         }
+        
      } while (multi_upload.isDone() == false);
      // print the final state of the transfer.
      TransferState xfer_state = multi_upload.getState();
@@ -203,7 +195,11 @@ public class AwsS3Build {
 
      System.out.print(string);
      
-    
+     try {
+         Thread.sleep(2000);
+     } catch (InterruptedException e) {
+         return;
+     }
     
      
  }
