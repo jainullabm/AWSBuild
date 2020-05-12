@@ -9,6 +9,7 @@ import org.joda.time.format.PeriodFormat;
 import com.amazonaws.auth.AWSCredentials;
 import com.amazonaws.auth.AWSStaticCredentialsProvider;
 import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Region;
 import com.amazonaws.regions.Regions;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
@@ -26,11 +27,17 @@ public class AwsS3Build {
 		 * 
 		 * System.out.println(args[0]); System.out.println(args[1]);
 		 */
-	
+	 BasicAWSCredentials creds = new BasicAWSCredentials("AKIA3YEWP2HAEQ3SMRX4", "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA");
+	    AmazonS3 s3Client = AmazonS3ClientBuilder.standard().withCredentials(new AWSStaticCredentialsProvider(creds)).build();
+
+	     
 	 
 	// s3client.putObject("www.checkmateinn.com","images/chatboticon.png",new File("C:\\Users\\moham\\Documents\\Innovation\\images\\chatboticon.png"));
 	 System.out.println("Started");
+	 TransferManagerBuilder.standard().setS3Client(s3Client);
 	 TransferManager xfer_mgr = TransferManagerBuilder.standard().build();
+	 System.out.println(xfer_mgr.getAmazonS3Client().getRegion());
+	 xfer_mgr.getAmazonS3Client().getRegion();
 	 System.out.println("Building");
 	 try {
 		 final long startTime = System.nanoTime();
