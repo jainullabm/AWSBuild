@@ -63,7 +63,7 @@ public class AwsS3Build {
 	     // loop with Transfer.isDone()
 	     showTransferProgress(xfer);
 	     // or block with Transfer.waitForCompletion()
-	   //  waitForCompletion(xfer);
+	    waitForCompletion(xfer);
 	     final long duration = System.nanoTime() - startTime;
 	    
 	  
