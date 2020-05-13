@@ -30,6 +30,7 @@ import com.amazonaws.AmazonServiceException;
 import com.amazonaws.services.s3.transfer.Upload;
 import com.amazonaws.services.s3.transfer.Transfer.TransferState;
 public class AwsS3Build {
+	static long so_far=0;
  public static void main(String args[]) {
 		/*
 		 * AWSCredentials credentials = new BasicAWSCredentials( args[0],args[1] );
@@ -114,7 +115,7 @@ public class AwsS3Build {
          // Note: so_far and total aren't used, they're just for
          // documentation purposes.
          TransferProgress progress = xfer.getProgress();
-         long so_far = progress.getBytesTransferred();
+         so_far= progress.getBytesTransferred();
          long total = progress.getTotalBytesToTransfer();
          double pct = progress.getPercentTransferred();
          eraseProgressBar();
@@ -168,7 +169,7 @@ public class AwsS3Build {
      final int bar_size = 100;
 
      int amt_full = (int) pct;
-     System.out.println("Upload started...");
+     System.out.println("Files Uploaded so far in bytes..."+so_far);
      printProgress(startTime, total, amt_full);
     
 		/*
