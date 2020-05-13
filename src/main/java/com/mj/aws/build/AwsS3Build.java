@@ -195,7 +195,7 @@ public class AwsS3Build {
          .append(String.join("", Collections.nCopies(current == 0 ? (int) (Math.log10(total)) : (int) (Math.log10(total)) - (int) (Math.log10(current)), " ")))
          .append(String.format(" %d/%d ", current, total));
 
-     System.out.print(string);
+     System.out.println(string);
      
      try {
          Thread.sleep(10000);
