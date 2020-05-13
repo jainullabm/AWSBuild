@@ -63,7 +63,7 @@ public class AwsS3Build {
 	     // loop with Transfer.isDone()
 	     showTransferProgress(xfer);
 	     // or block with Transfer.waitForCompletion()
-	    // waitForCompletion(xfer);
+	   //  waitForCompletion(xfer);
 	     final long duration = System.nanoTime() - startTime;
 	     ;
 	  
@@ -106,7 +106,6 @@ public class AwsS3Build {
      // print the transfer's human-readable description
    //  System.out.println(xfer.getDescription());
      // print an empty progress bar...
-	 System.out.println("showTransferProgress1");
      printProgressBar(0.0);
      // update the progress bar while the xfer is ongoing.
      do {
@@ -168,7 +167,7 @@ public class AwsS3Build {
      final int bar_size = 100;
 
      int amt_full = (int) pct;
-     System.out.println("printProgress(startTime, total, amt_full);");
+  
      printProgress(startTime, total, amt_full);
     
 		/*
