@@ -38,7 +38,7 @@ public class AwsS3Build {
 		 */
 	 
 	 
-	 System.out.println("Uploading started");
+	 System.out.println("Connecting AWS S3 Bucket....");
 	 BasicAWSCredentials creds = new BasicAWSCredentials("AKIA3YEWP2HAEQ3SMRX4", "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA");
 	 AmazonS3 s3client = AmazonS3ClientBuilder.standard()
 		        .withCredentials(new AWSStaticCredentialsProvider(creds))
@@ -65,7 +65,7 @@ public class AwsS3Build {
 	     // or block with Transfer.waitForCompletion()
 	   //  waitForCompletion(xfer);
 	     final long duration = System.nanoTime() - startTime;
-	     ;
+	    
 	  
 	     Period period = new Period(TimeUnit.NANOSECONDS.toSeconds(duration) * 1000L);
 	     String time = PeriodFormat.getDefault().print(period);
@@ -106,6 +106,7 @@ public class AwsS3Build {
      // print the transfer's human-readable description
    //  System.out.println(xfer.getDescription());
      // print an empty progress bar...
+	 System.out.println("calculating progress percentage");
      printProgressBar(0.0);
      // update the progress bar while the xfer is ongoing.
      do {
@@ -167,7 +168,7 @@ public class AwsS3Build {
      final int bar_size = 100;
 
      int amt_full = (int) pct;
-  
+     System.out.println("Upload started...");
      printProgress(startTime, total, amt_full);
     
 		/*
