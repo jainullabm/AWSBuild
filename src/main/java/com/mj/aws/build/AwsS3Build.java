@@ -40,7 +40,7 @@ public class AwsS3Build {
 	 
 	 
 	 System.out.println("Connecting AWS S3 Bucket....");
-	 BasicAWSCredentials creds = new BasicAWSCredentials("AKIA3YEWP2HAEQ3SMRX4", "rpYBU+TxVMTH/L05wo9D19hwEikxDNPXeAB3vGDA");
+	 BasicAWSCredentials creds = new BasicAWSCredentials(args[0], args[1]);
 	 AmazonS3 s3client = AmazonS3ClientBuilder.standard()
 		        .withCredentials(new AWSStaticCredentialsProvider(creds))
 		        .withRegion(Regions.US_EAST_2)
